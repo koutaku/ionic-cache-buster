@@ -1,0 +1,22 @@
+{
+  "name": "ionic-cache-buster",
+  "version": "0.0.1",
+  "description": "Filename Randomizer for Ionic Projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "author": "Josh Beard",
+  "license": "MIT",
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "path": "^0.12.7"
+  },
+  "dependencies": {
+    "fs": "0.0.2"
+  }
+}
