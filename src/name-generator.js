@@ -6,9 +6,11 @@ module.exports = function() {
     var newFileDate = new Date();
     var mainFileName = epochTicks + (newFileDate.getTime() * ticksPerMillisecond);
     var styleFileName = epochTicks + (newFileDate.getTime() * (ticksPerMillisecond * 2));
+    var polyFillFileName = epochTicks + (newFileDate.getTime() * (ticksPerMillisecond * 3));
 
     return {
         mainName: mainFileName + ".js",
-        styleName: styleFileName + ".css"
+        styleName: styleFileName + ".css",
+        polyName: polyFillFileName + ".js"
     };
 }
