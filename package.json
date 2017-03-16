@@ -1,6 +1,6 @@
 {
   "name": "ionic-cache-buster",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Filename Randomizer for Ionic Projects",
   "main": "index.js",
   "scripts": {

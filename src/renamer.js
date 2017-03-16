@@ -19,7 +19,7 @@ const defaultBrowserPath = path.resolve(path.resolve() + browserPath);
 const browserBuildPath = "/platforms/browser" + buildPath;
 const defaultBrowserBuildPath = path.resolve(path.resolve() + browserBuildPath);
 
-function handleRewrite(indexPath) {
+function handleRewrite(indexPath, generatedNames) {
     console.log("Reading " + indexPath);
     var data = fs.readFileSync(indexPath, { encoding: "utf8" });
     console.log("Done reading");
@@ -77,12 +77,12 @@ module.exports = function(fullBuildPath) {
     var indexFilePath = path.resolve(fullWwwPath + "/" + defaultIndexFileName);
 
     if(fs.existsSync(indexFilePath)) {
-        handleRewrite(indexFilePath);
+        handleRewrite(indexFilePath, generatedNames);
     }
 
     var browserIndexFilePath = path.resolve(defaultBrowserPath + "/" + defaultIndexFileName);
 
     if(fs.existsSync(browserIndexFilePath)) {
-        handleRewrite(browserIndexFilePath);
+        handleRewrite(browserIndexFilePath, generatedNames);
     }
 }
