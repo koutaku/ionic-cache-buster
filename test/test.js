@@ -25,7 +25,8 @@ describe('renamer', function(){
         var testFileNames = [
             "main.js",
             "main.js.map",
-            "style.css"
+            "main.css",
+            "polyfills.js"
         ];
 
         var __dirName = path.resolve();
@@ -41,24 +42,22 @@ describe('renamer', function(){
             fs.closeSync(fs.openSync(path.resolve(testFilesFolder + "/" + fn), 'w'));
         });
 
-        fs.readdirSync(testFilesFolder, (err, files) => {
+        var files = fs.readdirSync(testFilesFolder);
 
-            expect(files.length).to.be.equal(testFileNames.length);
+        expect(files.length).to.be.equal(testFileNames.length);
 
-            testFileNames.forEach(tf => {
-                expect(files.indexOf(tf)).to.be.greaterThan(-1);
-            })
+        testFileNames.forEach(tf => {
+            expect(files.indexOf(tf)).to.be.greaterThan(-1);
         });
         
         var result = renamer(path.resolve(testFilesFolder + "/"));
         
-        fs.readdirSync(testFilesFolder, (err, files) => {
+        var postFiles = fs.readdirSync(testFilesFolder) 
 
-            expect(files.length).to.be.equal(testFileNames.length);
+        expect(postFiles.length).to.be.equal(testFileNames.length);
 
-            testFileNames.forEach(tf => {
-                expect(files.indexOf(tf)).to.be.equal(-1);
-            })
+        testFileNames.forEach(tf => {
+            expect(postFiles.indexOf(tf)).to.be.equal(-1);
         });
 
         deleteFolderRecursive(testFilesFolder);
