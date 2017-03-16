@@ -89,7 +89,7 @@ module.exports = function(fullBuildPath) {
     console.log("Getting Index and Main");
 
     var indexFilePath = path.resolve(fullWwwPath + "/" + defaultIndexFileName);
-    var mainJsPath = path.resolve(fullBuildPath + "/" + defaultMainJsFileName);
+    var mainJsPath = path.resolve(fullBuildPath + "/" + generatedNames.mainName);
 
     if(fs.existsSync(indexFilePath)) {
         rewriteIndex(indexFilePath, generatedNames);
@@ -100,7 +100,7 @@ module.exports = function(fullBuildPath) {
     }
 
     var browserIndexFilePath = path.resolve(defaultBrowserPath + "/" + defaultIndexFileName);
-    var browserMainJsPath = path.resolve(defaultBrowserPath + "/" + defaultMainJsFileName);
+    var browserMainJsPath = path.resolve(defaultBrowserPath + "/" + generatedNames.mainName);
 
     if(fs.existsSync(browserIndexFilePath)) {
         rewriteIndex(browserIndexFilePath, generatedNames);
