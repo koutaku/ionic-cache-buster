@@ -100,7 +100,7 @@ module.exports = function(fullBuildPath) {
     }
 
     var browserIndexFilePath = path.resolve(defaultBrowserPath + "/" + defaultIndexFileName);
-    var browserMainJsPath = path.resolve(defaultBrowserPath + "/" + generatedNames.mainName);
+    var browserMainJsPath = path.resolve(fullBrowserBuildPath + "/" + generatedNames.mainName);
 
     if(fs.existsSync(browserIndexFilePath)) {
         rewriteIndex(browserIndexFilePath, generatedNames);
